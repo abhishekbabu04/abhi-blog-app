@@ -5,6 +5,7 @@ import { IoMdMenu } from "react-icons/io";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { BACKEND_URL } from "../../utils";
 
 const Sidebar = ({ setComponent }) => {
   const { profile, setProfile, setIsAuthenticated } = useAuth();
@@ -20,7 +21,7 @@ const Sidebar = ({ setComponent }) => {
   const handleLogout = async (e) => {
     e.preventDefault();
     try {
-      await axios.get("http://localhost:4001/api/users/logout", {
+      await axios.get(`${BACKEND_URL}/api/users/logout`, {
         withCredentials: true,
       });
 

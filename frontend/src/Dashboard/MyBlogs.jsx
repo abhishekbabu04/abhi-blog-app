@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthProvider";
+import { BACKEND_URL } from "../../utils";
 
 function MyBlogs() {
   const navigateTo = useNavigate();
@@ -12,7 +13,7 @@ function MyBlogs() {
     const fetchMyBlogs = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4001/api/blogs/my-blogs",
+          `${BACKEND_URL}/blogs/my-blogs`,
           { withCredentials: true }
         );
         console.log(data);
@@ -26,7 +27,7 @@ function MyBlogs() {
 
   const handleDelete = async (id) => {
     await axios
-      .delete(`http://localhost:4001/api/blogs/delete/${id}`, {
+      .delete(`${BACKEND_URL}/api/blogs/delete/${id}`, {
         withCredentials: true,
       })
       .then((res) => {

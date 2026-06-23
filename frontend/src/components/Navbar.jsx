@@ -6,6 +6,7 @@ import { IoClose } from "react-icons/io5";
 import axios from 'axios';
 import Blogs from '../pages/Blogs';
 import { toast } from 'react-toastify';
+import { BACKEND_URL } from '../../utils';
 
 function Navbar() {
     const navigateTo = useNavigate();
@@ -19,7 +20,7 @@ function Navbar() {
     const handleLogout = async (e) => {
         e.preventDefault();
         try {
-            const { data } = await axios.get("http://localhost:4001/api/users/logout", { withCredentials: true });
+            const { data } = await axios.get(`${BACKEND_URL}/api/users/logout`, { withCredentials: true });
             toast.success("Logout Successfully");
 
             setIsAuthenticated(false)

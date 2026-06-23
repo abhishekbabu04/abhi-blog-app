@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import toast from 'react-hot-toast'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthProvider'
+import { BACKEND_URL } from '../../utils'
 
 const Login = () => {
 
@@ -21,7 +22,7 @@ const Login = () => {
           
 
         try {
-            const { data } = await axios.post('http://localhost:4001/api/users/login',
+            const { data } = await axios.post(`${BACKEND_URL}/api/users/login`,
                 {email,password,role}, {
                 headers: {
                     "Content-Type": "multipart/form-data",

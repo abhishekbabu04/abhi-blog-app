@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import toast from 'react-hot-toast'
 import { useAuth } from '../context/AuthProvider'
+import { BACKEND_URL } from '../../utils'
 
 const Register = () => {
 
@@ -51,7 +52,7 @@ const Register = () => {
         formData.append('photo', photo)
 
         try {
-            const { data } = await axios.post('http://localhost:4001/api/users/register',
+            const { data } = await axios.post(`${BACKEND_URL}/api/users/register`,
                 formData, {
                 headers: {
                     "Content-Type": "multipart/form-data",
