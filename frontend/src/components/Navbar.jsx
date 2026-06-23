@@ -49,7 +49,7 @@ function Navbar() {
                     </ul>
                     <div className='md:hidden' onClick={() => setShow(!show)}>{show ? <IoClose size={24} /> : <AiOutlineMenu size={24} />}</div>
                 </div>
-                <div className='space-x-2 flex sm:px-5 px-2'>
+                <div className='flex items-center gap-2'>
                     {isAuthenticated && profile?.role === "admin" ? (<Link to="/dashboard"
                         className='bg-blue-600 text-white px-2 sm:px-5 py-2 rounded-full font-medium hover:bg-blue-700 transition'
                     >
