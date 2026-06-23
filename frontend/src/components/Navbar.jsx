@@ -35,9 +35,11 @@ function Navbar() {
 
     console.log(Blogs)
     return (
-        <nav className='bg-white shadow-md sticky top-0 z-50 px-6 py-4'>
+        <nav className='bg-white shadow-md sticky top-0 z-50 px-3 md:px-6 py-4'>
             <div className="flex items-center container justify-between mx-auto">
-                <div className='text-3xl font-extrabold tracking-tight cursor-pointer'>Abhi<span className='text-blue-600'>Blog</span> </div>
+                <div className='text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight cursor-pointer'>
+                    Abhi<span className='text-blue-600'>Blog</span>
+                </div>
                 {/* desktop bar */}
                 <div className=' mx-6'>
                     <ul className='hidden md:flex items-center gap-8 text-gray-700 font-medium text-[15px]'>
