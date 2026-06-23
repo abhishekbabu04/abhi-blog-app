@@ -49,7 +49,7 @@ function Navbar() {
                     </ul>
                     <div className='md:hidden' onClick={() => setShow(!show)}>{show ? <IoClose size={24} /> : <AiOutlineMenu size={24} />}</div>
                 </div>
-                <div className='flex items-center gap-2'>
+                <div className='flex items-center gap-2 shrink-0'>
                     {isAuthenticated && profile?.role === "admin" ? (<Link to="/dashboard"
                         className='bg-blue-600 text-white px-2 sm:px-5 py-2 rounded-full font-medium hover:bg-blue-700 transition'
                     >
@@ -60,7 +60,7 @@ function Navbar() {
                         className='bg-black text-white px-5 py-2 rounded-full font-medium hover:bg-gray-800 transition'
                     >LOGIN</Link>) : (<div>
 
-                        <button onClick={handleLogout} className='bg-red-500 text-white px-2 sm:px-5 py-2 rounded-full font-medium hover:bg-red-600 transition'>
+                        <button onClick={handleLogout} className='bg-red-500 text-white px-4 sm:px-5 py-2 rounded-full font-medium hover:bg-red-600 transition whitespace-nowrap'>
                             LOGOUT
                         </button>
                     </div>
