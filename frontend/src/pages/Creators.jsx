@@ -52,23 +52,7 @@ function Creators() {
             Meet Our Creators
           </h1>
 
-          <button
-            onClick={() => setShowUsers(!showUsers)}
-            className="
-      bg-green-600
-      hover:bg-green-700
-      text-white
-      px-5
-      py-2
-      rounded-lg
-      shadow-md
-      transition-all
-      duration-300
-    "
-          >
-            👥 Total Users ({users.length})
-          </button>
-
+                 
           <div className="flex gap-3">
             <button
               className="bg-blue-600 text-white px-5 py-2 rounded-lg shadow-md"
@@ -78,7 +62,7 @@ function Creators() {
 
             <button
               onClick={() => setShowUsers(!showUsers)}
-              className="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-lg shadow-md"
+              className="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-lg shadow-md transition-all duration-300"
             >
               👥 Users ({users.length})
             </button>
