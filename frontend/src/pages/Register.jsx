@@ -64,12 +64,20 @@ const Register = () => {
 
             if (data?.user?.role === "user") {
                 toast.success("User registered successfully");
-                toast.error("User account cannot access dashboard or create blogs");
+                toast.error("User cannot access dashboard or create blogs",
+                    {
+                        duration: 6000,
+                    }
+
+                );
             } else {
                 toast.success("Admin registered successfully");
             }
 
-            navigateTo("/");
+            setTimeout(() => {
+                navigateTo("/");
+            }, 5000);
+            
             setName("");
             setEmail("");
             setPhone("");
