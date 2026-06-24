@@ -52,28 +52,50 @@ function Blogs() {
           >
             <option value="">All Categories</option>
 
-            <option value="Technology">Technology</option>
-            <option value="Coding">Coding</option>
-            <option value="Web Development">Web Development</option>
-            <option value="App Development">App Development</option>
-            <option value="AI/ML">AI / Machine Learning</option>
-            <option value="Cyber Security">Cyber Security</option>
+            <optgroup label="💻 Technology">
+              <option value="Technology">Technology</option>
+              <option value="Coding">Coding</option>
+              <option value="Web Development">Web Development</option>
+              <option value="App Development">App Development</option>
+              <option value="AI/ML">AI / Machine Learning</option>
+              <option value="Cyber Security">Cyber Security</option>
+            </optgroup>
 
-            <option value="Business">Business</option>
-            <option value="Startup">Startup</option>
-            <option value="Finance">Finance</option>
+            <optgroup label="💼 Business">
+              <option value="Business">Business</option>
+              <option value="Startup">Startup</option>
+              <option value="Finance">Finance</option>
+              <option value="Marketing">Digital Marketing</option>
+              <option value="Career">Career Guidance</option>
+            </optgroup>
 
-            <option value="Education">Education</option>
+            <optgroup label="🎓 Education">
+              <option value="Education">Education</option>
+              <option value="Learning">Learning</option>
+              <option value="Tutorials">Tutorials</option>
+            </optgroup>
 
-            <option value="Entertainment">Entertainment</option>
-            <option value="Travel">Travel</option>
+            <optgroup label="🎬 Entertainment">
+              <option value="Entertainment">Entertainment</option>
+              <option value="Movies">Movies</option>
+              <option value="Music">Music</option>
+              <option value="Lifestyle">Lifestyle</option>
+              <option value="Travel">Travel</option>
+            </optgroup>
 
-            <option value="Sports">Sports</option>
-            <option value="Health">Health</option>
+            <optgroup label="🏃 Sports & Health">
+              <option value="Sports">Sports</option>
+              <option value="Fitness">Fitness</option>
+              <option value="Health">Health</option>
+            </optgroup>
 
-            <option value="Motivation">Motivation</option>
-            <option value="News">News</option>
-            <option value="General">General</option>
+            <optgroup label="✨ Others">
+              <option value="Devotion">Devotion</option>
+              <option value="Motivation">Motivation</option>
+              <option value="News">News</option>
+              <option value="General">General</option>
+              <option value="Other">Other</option>
+            </optgroup>
           </select>
         </div>
 
@@ -99,7 +121,11 @@ function Blogs() {
               </Link>
             ))
           ) : (
-            <div></div>
+            <div className="col-span-full text-center py-10">
+              <h2 className="text-xl font-semibold text-gray-600">
+                No blogs found
+              </h2>
+            </div>
           )}
         </div>
       </div>
