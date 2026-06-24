@@ -74,10 +74,10 @@ const Register = () => {
                 toast.success("Admin registered successfully");
             }
 
-            setTimeout(() => {
-                navigateTo("/");
-            }, 5000);
-            
+
+            navigateTo("/");
+
+
             setName("");
             setEmail("");
             setPhone("");
