@@ -57,7 +57,7 @@ function Creators() {
           <div className="flex gap-3">
             <button
               onClick={() => setShowAdmins(!showAdmins)}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg shadow-md transition-all duration-300"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg shadow-md transition-all duration-300 cursor-pointer"
             >
               👨‍💼 Admins ({creators.length})
             </button>
@@ -77,7 +77,7 @@ function Creators() {
       animate-fadeIn
     "
               >
-                <div className="bg-blue-600 text-white px-4 py-3 font-semibold cursor-pointer">
+                <div className="bg-blue-600 text-white px-4 py-3 font-semibold  ">
                   Admins List
                 </div>
 
@@ -146,7 +146,7 @@ function Creators() {
           {creators.map((creator) => (
             <div
               key={creator._id}
-              className="bg-white shadow-lg rounded-lg overflow-hidden w-full transition scale-105"
+              className="bg-white shadow-lg rounded-lg overflow-hidden w-full transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
             >
               <div className="relative">
                 <img
