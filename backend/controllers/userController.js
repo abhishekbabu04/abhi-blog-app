@@ -5,24 +5,13 @@ import { createTokenAndSaveCookies } from "../jwt/AuthToken.js";
 
 export const register = async (req, res) => {
   try {
-    if (!req.files || !req.files.photo) {
-      return res.status(400).json({ message: "User photo is required" });
-    }
-
-    const { photo } = req.files;
-
-    const allowedFormats = ["image/jpg", "image/png", "image/jpeg", "image/webp"];
-    if (!allowedFormats.includes(photo.mimetype)) {
-      return res.status(400).json({ message: "Invalid photo format" });
-    }
-
     const { name, email, phone, password, education, role } = req.body;
 
     if (!name || !email || !phone || !password || !education || !role) {
       return res.status(400).json({ message: "All fields are required" });
-    }
+    } 
 
-    const existingUser = await User.findOne({ email });
+     const existingUser = await User.findOne({ email });
     if (existingUser) {
       return res.status(400).json({ message: "Email already exist" });
     }
@@ -34,6 +23,17 @@ export const register = async (req, res) => {
       return res.status(400).json({
         message: "Phone number already registered",
       });
+    }
+
+    if (!req.files || !req.files.photo) {
+      return res.status(400).json({ message: "User photo is required" });
+    }
+
+    const { photo } = req.files;
+
+    const allowedFormats = ["image/jpg", "image/png", "image/jpeg", "image/webp"];
+    if (!allowedFormats.includes(photo.mimetype)) {
+      return res.status(400).json({ message: "Invalid photo format" });
     }
 
     const cloudinaryResponse = await cloudinary.uploader.upload(photo.tempFilePath);
