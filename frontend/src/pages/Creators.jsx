@@ -46,14 +46,15 @@ function Creators() {
 
   return (
     <div className="my-20 bg-gray-100">
-      <div className="flex justify-between items-center px-6 mb-8 relative">
-        <h1 className="text-3xl font-bold text-gray-800">
-          Popular Creators
-        </h1>
+      <div className="container mx-auto px-4">
+        <div className="flex justify-between items-center px-6 mb-8 relative">
+          <h1 className="text-4xl font-extrabold bg-linear-to-r from-blue-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">
+            Meet Our Creators
+          </h1>
 
-        <button
-          onClick={() => setShowUsers(!showUsers)}
-          className="
+          <button
+            onClick={() => setShowUsers(!showUsers)}
+            className="
       bg-green-600
       hover:bg-green-700
       text-white
@@ -64,13 +65,13 @@ function Creators() {
       transition-all
       duration-300
     "
-        >
-          👥 Total Users ({users.length})
-        </button>
+          >
+            👥 Total Users ({users.length})
+          </button>
 
-        {showUsers && (
-          <div
-            className="
+          {showUsers && (
+            <div
+              className="
         absolute
         right-6
         top-14
@@ -82,58 +83,60 @@ function Creators() {
         z-50
         animate-fadeIn
       "
-          >
-            <div className="bg-green-600 text-white px-4 py-3 font-semibold">
-              Users List
-            </div>
+            >
+              <div className="bg-green-600 text-white px-4 py-3 font-semibold">
+                Users List
+              </div>
 
-            <div className="max-h-80 overflow-y-auto scrollbar-thin">
-              {users.map((user) => (
-                <div
-                  key={user._id}
-                  className="px-4 py-3 border-b hover:bg-gray-100"
-                >
-                  <p>{user.name}</p>
-                  <p className="text-xs text-gray-500">
-                    {user.email}
-                  </p>
-                </div>
-              ))}
+              <div className="max-h-80 overflow-y-auto scrollbar-thin">
+                {users.map((user) => (
+                  <div
+                    key={user._id}
+                    className="px-4 py-3 border-b hover:bg-gray-100"
+                  >
+                    <p>{user.name}</p>
+                    <p className="text-xs text-gray-500">
+                      {user.email}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        )}
-      </div>
-      <div className="flex flex-wrap justify-center items-center">
-        {creators.map((creator) => (
-          <div
-            key={creator._id}
-            className="bg-white shadow-lg rounded-lg overflow-hidden max-w-xs w-full m-2"
-          >
-            <div className="relative">
-              <img
-                src={creator.photo.url}
-                alt="avatar"
-                className="w-full h-32 object-cover"
-              />
-              <div className="absolute inset-x-0 bottom-0 transform translate-y-1/2">
+          )}
+        </div>
+
+        <div className="flex flex-wrap justify-center items-center">
+          {creators.map((creator) => (
+            <div
+              key={creator._id}
+              className="bg-white shadow-lg rounded-lg overflow-hidden max-w-xs w-full m-2"
+            >
+              <div className="relative">
                 <img
                   src={creator.photo.url}
                   alt="avatar"
-                  className="w-16 h-16 rounded-full mx-auto border-4 border-gray-700"
+                  className="w-full h-32 object-cover"
                 />
+                <div className="absolute inset-x-0 bottom-0 transform translate-y-1/2">
+                  <img
+                    src={creator.photo.url}
+                    alt="avatar"
+                    className="w-16 h-16 rounded-full mx-auto border-4 border-gray-700"
+                  />
+                </div>
+              </div>
+              <div className="px-4 py-6 mt-4">
+                <h2 className="text-center text-xl font-semibold text-gray-800">
+                  {creator.name}
+                </h2>
+                <p className="text-center text-gray-600 mt-2">{creator.email}</p>
+                <p className="text-center text-gray-600 mt-2">{creator.phone}</p>
+                <p className="text-center text-gray-600 mt-2">{creator.role}</p>
               </div>
             </div>
-            <div className="px-4 py-6 mt-4">
-              <h2 className="text-center text-xl font-semibold text-gray-800">
-                {creator.name}
-              </h2>
-              <p className="text-center text-gray-600 mt-2">{creator.email}</p>
-              <p className="text-center text-gray-600 mt-2">{creator.phone}</p>
-              <p className="text-center text-gray-600 mt-2">{creator.role}</p>
-            </div>
-          </div>
 
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
