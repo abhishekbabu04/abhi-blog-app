@@ -59,10 +59,16 @@ const Register = () => {
                 },
                 withCredentials: true
             })
-            console.log(data)
-            toast.success('User registered successfully')
             setProfile(data?.user)
             setIsAuthenticated(true)
+
+            if (data?.user?.role === "user") {
+                toast.success("User registered successfully");
+                toast.error("User account cannot access dashboard or create blogs");
+            } else {
+                toast.success("Admin registered successfully");
+            }
+
             navigateTo("/");
             setName("");
             setEmail("");
@@ -72,13 +78,13 @@ const Register = () => {
             setEducation("");
             setPhoto("");
             setPhotoPreview("");
-             
+
         } catch (error) {
             console.log(error)
-            toast.error( "Please fill all required fields")
+            toast.error("Please fill all required fields")
         } finally {
-        setLoading(false);
-    }
+            setLoading(false);
+        }
 
     };
 
@@ -144,10 +150,10 @@ const Register = () => {
                             <input type='file' onChange={changePhotoHandler} className='w-full p-2  border rounded-md' />
                         </div>
                         <p className='text-center m-4 '>Already registered? <Link to="/login" className="text-blue-600">Login Now</Link></p>
-                        <button type='submit' disabled={loading} 
-                        className='w-full p-2 bg-blue-500 hover:bg-blue-800 duration-300 rounded-md text-white cursor-pointer'>
+                        <button type='submit' disabled={loading}
+                            className='w-full p-2 bg-blue-500 hover:bg-blue-800 duration-300 rounded-md text-white cursor-pointer'>
                             {loading ? "Registering..." : "Register"}
-                            </button>
+                        </button>
                     </form>
                 </div>
             </div>
