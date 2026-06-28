@@ -43,7 +43,7 @@ function MyProfile() {
             📧 Email Verified User
           </div>
 
-          <div className="bg-gray-100 rounded-xl p-3 text-center text-gray-600">
+          <div className="bg-gray-100 rounded-xl p-3 text-center text-red-600">
             👤 Active Member
           </div>
 
